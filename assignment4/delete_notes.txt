@@ -1,0 +1,30 @@
+BSTObj* temp = findMin((*pT)->rightChild);
+(*pT)->term = temp->term;
+(*pT)->rightChild = deleteItem(temp->term, &((*pT)->rightChild));
+
+	//Finding the max length string in tree
+	int max = strlen(T->term);
+	int lMax = treeHeight(T->leftChild, height);
+	int rMax = treeHeight(T->rightChild, height);
+	if(lMax > max){
+		max = lMax;
+	}
+	if(rMax > max){
+		max = rMax;
+	}
+	return max;
+
+	//Finding the min length string in tree
+	int min = strlen(T->term);
+	int lMin = treeHeight(T->leftChild, height);
+	int rMin = treeHeight(T->rightChild, height);
+	if(rMin < min && T->rightChild != NULL){
+		min = rMin;
+	}
+	if(lMin < min && T->leftChild != NULL){
+		min = lMin;
+	}
+	return min;
+
+//msi
+
